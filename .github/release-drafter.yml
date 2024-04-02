@@ -1,31 +1,41 @@
-name-template: 'v$RESOLVED_VERSION 🌈'
-tag-template: 'v$RESOLVED_VERSION'
+name-template: "InfinityFlow Aspire Temporal $RESOLVED_VERSION"
+tag-template: "InfinityFlow.Aspire.Temporal.$RESOLVED_VERSION"
+change-template: "- $TITLE by @$AUTHOR (#$NUMBER)"
+no-changes-template: "- No changes"
 categories:
-  - title: '🚀 Features'
+  - title: "📚 Documentation"
     labels:
-      - 'feature'
-      - 'enhancement'
-  - title: '🐛 Bug Fixes'
+      - "documentation"
+  - title: "🚀 New Features"
     labels:
-      - 'fix'
-      - 'bugfix'
-      - 'bug'
-  - title: '🧰 Maintenance'
-    label: 'chore'
-change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
-change-title-escapes: '\<*_&' # You can add # and @ to disable mentions, and add ` to disable code blocks.
+      - "enhancement"
+  - title: "🐛 Bug Fixes"
+    labels:
+      - "bug"
+  - title: "☸️ Deployment Resources"
+    labels:
+      - "deployment-resources"
 version-resolver:
   major:
     labels:
-      - 'major'
+      - "major"
   minor:
     labels:
-      - 'minor'
+      - "minor"
   patch:
     labels:
-      - 'patch'
+      - "patch"
   default: patch
 template: |
-  ## What's Changed
-
   $CHANGES
+
+  ## 👨🏼‍💻 Contributors
+
+  $CONTRIBUTORS
+autolabeler:
+  - label: "documentation"
+    files:
+      - "docs/**/*"
+  - label: "maintenance"
+    files:
+      - ".github/**/*"
