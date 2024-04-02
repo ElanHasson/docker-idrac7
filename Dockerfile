@@ -2,7 +2,7 @@
 FROM rockylinux:9.1
 
 ## INSTALL DEPENDS
-RUN dnf update && \
+RUN dnf update -y && \
     dnf install -y wget openssl-devel perl && \
     dnf clean all
 
